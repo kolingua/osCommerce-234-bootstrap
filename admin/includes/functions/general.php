@@ -5,7 +5,7 @@
   osCommerce, Open Source E-Commerce Solutions
   http://www.oscommerce.com
 
-  Copyright (c) 2014 osCommerce
+  Copyright (c) 2015 osCommerce
 
   Released under the GNU General Public License
 */
@@ -1391,7 +1391,7 @@
       $parts = explode('.', $ip_address);
 
       foreach ($parts as $ip_parts) {
-        if ( (intval($ip_parts) > 255) || (intval($ip_parts) < 0) ) {
+        if ( ((int)($ip_parts) > 255) || ((int)($ip_parts) < 0) ) {
           return false; // number is not within 0-255
         }
       }
@@ -1472,4 +1472,46 @@
       return is_writable($file);
     }
   }
-?>
+
+  function tep_get_category_description($category_id, $language_id) {
+    $category_query = tep_db_query("select categories_description from categories_description where categories_id = '" . (int)$category_id . "' and language_id = '" . (int)$language_id . "'");
+    $category = tep_db_fetch_array($category_query);
+
+    return $category['categories_description'];
+  }
+  
+  function tep_get_manufacturer_description($manufacturer_id, $language_id) {
+    $manufacturer_query = tep_db_query("select manufacturers_description from manufacturers_info where manufacturers_id = '" . (int)$manufacturer_id . "' and languages_id = '" . (int)$language_id . "'");
+    $manufacturer = tep_db_fetch_array($manufacturer_query);
+
+    return $manufacturer['manufacturers_description'];
+  }
+  
+  function tep_get_category_seo_description($category_id, $language_id) {
+    $category_query = tep_db_query("select categories_seo_description from categories_description where categories_id = '" . (int)$category_id . "' and language_id = '" . (int)$language_id . "'");
+    $category = tep_db_fetch_array($category_query);
+
+    return $category['categories_seo_description'];
+  }
+  
+  function tep_get_category_seo_keywords($category_id, $language_id) {
+    $category_query = tep_db_query("select categories_seo_keywords from categories_description where categories_id = '" . (int)$category_id . "' and language_id = '" . (int)$language_id . "'");
+    $category = tep_db_fetch_array($category_query);
+
+    return $category['categories_seo_keywords'];
+  }
+  
+  function tep_get_manufacturer_seo_description($manufacturer_id, $language_id) {
+    $manufacturer_query = tep_db_query("select manufacturers_seo_description from manufacturers_info where manufacturers_id = '" . (int)$manufacturer_id . "' and languages_id = '" . (int)$language_id . "'");
+    $manufacturer = tep_db_fetch_array($manufacturer_query);
+
+    return $manufacturer['manufacturers_seo_description'];
+  }
+  
+  function tep_get_manufacturer_seo_keywords($manufacturer_id, $language_id) {
+    $manufacturer_query = tep_db_query("select manufacturers_seo_keywords from manufacturers_info where manufacturers_id = '" . (int)$manufacturer_id . "' and languages_id = '" . (int)$language_id . "'");
+    $manufacturer = tep_db_fetch_array($manufacturer_query);
+
+    return $manufacturer['manufacturers_seo_keywords'];
+  }
+  

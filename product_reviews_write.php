@@ -105,9 +105,11 @@ function checkForm() {
 }
 //--></script>
 
-<div class="page-header">
-  <h1 class="pull-right"><?php echo $products_price; ?></h1>
-  <h1><?php echo $products_name; ?></h1>
+<div class="page-header">  
+  <div class="row">
+    <h1 class="col-sm-4"><?php echo $products_name; ?></h1>
+    <h2 class="col-sm-8 text-right-not-xs"><?php echo $products_price; ?></h2>
+  </div>
 </div>
 
 <?php
@@ -127,7 +129,7 @@ function checkForm() {
   <div class="pull-right text-center">
     <?php echo '<a href="' . tep_href_link(FILENAME_PRODUCT_INFO, 'products_id=' . $product_info['products_id']) . '">' . tep_image(DIR_WS_IMAGES . $product_info['products_image'], addslashes($product_info['products_name']), SMALL_IMAGE_WIDTH, SMALL_IMAGE_HEIGHT, 'hspace="5" vspace="5"') . '</a>'; ?>
 
-    <p><?php echo tep_draw_button(IMAGE_BUTTON_IN_CART, 'glyphicon glyphicon-shopping-cart', tep_href_link(basename($PHP_SELF), tep_get_all_get_params(array('action')) . 'action=buy_now')); ?></p>
+    <p><?php echo tep_draw_button(IMAGE_BUTTON_IN_CART, 'fa fa-shopping-cart', tep_href_link(basename($PHP_SELF), tep_get_all_get_params(array('action')) . 'action=buy_now')); ?></p>
   </div>
 
   <div class="clearfix"></div>
@@ -145,7 +147,7 @@ function checkForm() {
       <label for="inputReview" class="control-label col-sm-3"><?php echo SUB_TITLE_REVIEW; ?></label>
       <div class="col-sm-9">
         <?php
-        echo tep_draw_textarea_field('review', 'soft', 60, 15, NULL, 'required aria-required="true" id="inputReview" placeholder="' . SUB_TITLE_REVIEW . '"');
+        echo tep_draw_textarea_field('review', 'soft', 60, 15, NULL, 'required aria-required="true" id="inputReview" placeholder="' . SUB_TITLE_REVIEW_TEXT . '"');
         echo FORM_REQUIRED_INPUT;
         ?>
       </div>
@@ -175,8 +177,8 @@ function checkForm() {
   </div>
 
   <div class="buttonSet row">
-    <div class="col-xs-6"><?php echo tep_draw_button(IMAGE_BUTTON_BACK, 'glyphicon glyphicon-chevron-left', tep_href_link(FILENAME_PRODUCT_REVIEWS, tep_get_all_get_params(array('reviews_id', 'action')))); ?></div>
-    <div class="col-xs-6 text-right"><?php echo tep_draw_button(IMAGE_BUTTON_CONTINUE, 'glyphicon glyphicon-chevron-right', null, 'primary', null, 'btn-success'); ?></div>
+    <div class="col-xs-6"><?php echo tep_draw_button(IMAGE_BUTTON_BACK, 'fa fa-angle-left', tep_href_link(FILENAME_PRODUCT_REVIEWS, tep_get_all_get_params(array('reviews_id', 'action')))); ?></div>
+    <div class="col-xs-6 text-right"><?php echo tep_draw_button(IMAGE_BUTTON_CONTINUE, 'fa fa-angle-right', null, 'primary', null, 'btn-success'); ?></div>
   </div>
 </div>
 

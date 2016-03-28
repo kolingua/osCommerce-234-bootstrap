@@ -118,7 +118,7 @@
         <?php echo TEXT_SELECTED_BILLING_DESTINATION; ?>
         <div class="clearfix"></div>
         <div class="pull-right">
-          <?php echo tep_draw_button(IMAGE_BUTTON_CHANGE_ADDRESS, 'glyphicon glyphicon-home', tep_href_link(FILENAME_CHECKOUT_PAYMENT_ADDRESS, '', 'SSL')); ?>
+          <?php echo tep_draw_button(IMAGE_BUTTON_CHANGE_ADDRESS, 'fa fa-home', tep_href_link(FILENAME_CHECKOUT_PAYMENT_ADDRESS, '', 'SSL')); ?>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -177,7 +177,7 @@
   $radio_buttons = 0;
   for ($i=0, $n=sizeof($selection); $i<$n; $i++) {
 ?>
-      <tr>
+      <tr class="table-selection">
         <td><strong><?php echo $selection[$i]['module']; ?></strong></td>
         <td align="right">
 
@@ -212,8 +212,8 @@
 ?>
 
           <tr>
-            <td>1<?php echo $selection[$i]['fields'][$j]['title']; ?></td>
-            <td>2<?php echo $selection[$i]['fields'][$j]['field']; ?></td>
+            <td><?php echo $selection[$i]['fields'][$j]['title']; ?></td>
+            <td><?php echo $selection[$i]['fields'][$j]['field']; ?></td>
           </tr>
 
 <?php
@@ -252,7 +252,7 @@
   </div>
 
   <div class="buttonSet">
-    <div class="text-right"><?php echo tep_draw_button(IMAGE_BUTTON_CONTINUE, 'glyphicon glyphicon-chevron-right', null, 'primary', null, 'btn-success'); ?></div>
+    <div class="text-right"><?php echo tep_draw_button(IMAGE_BUTTON_CONTINUE, 'fa fa-angle-right', null, 'primary', null, 'btn-success'); ?></div>
   </div>
 
   <div class="clearfix"></div>

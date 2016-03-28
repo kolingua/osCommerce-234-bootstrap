@@ -183,7 +183,7 @@
         <?php echo TEXT_CHOOSE_SHIPPING_DESTINATION; ?>
         <div class="clearfix"></div>
         <div class="pull-right">
-          <?php echo tep_draw_button(IMAGE_BUTTON_CHANGE_ADDRESS, 'glyphicon glyphicon-home', tep_href_link(FILENAME_CHECKOUT_SHIPPING_ADDRESS, '', 'SSL')); ?>
+          <?php echo tep_draw_button(IMAGE_BUTTON_CHANGE_ADDRESS, 'fa fa-home', tep_href_link(FILENAME_CHECKOUT_SHIPPING_ADDRESS, '', 'SSL')); ?>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -257,12 +257,10 @@
       for ($i=0, $n=sizeof($quotes); $i<$n; $i++) {
         for ($j=0, $n2=sizeof($quotes[$i]['methods']); $j<$n2; $j++) {
 // set the radio button to be checked if it is the method chosen
-          $checked = (($quotes[$i]['id'] . '_' . $quotes[$i]['methods'][$j]['id'] == $shipping['id']) ? true : false);
-
-          echo '      <tr>' . "\n";
+          $checked = (($quotes[$i]['id'] . '_' . $quotes[$i]['methods'][$j]['id'] == $shipping['id']) ? true : false);         
 
 ?>
-
+      <tr class="table-selection">
         <td>
           <strong><?php echo $quotes[$i]['module']; ?></strong>
           <?php
@@ -336,7 +334,7 @@
   </div>
 
   <div class="buttonSet">
-    <div class="text-right"><?php echo tep_draw_button(IMAGE_BUTTON_CONTINUE, 'glyphicon glyphicon-chevron-right', null, 'primary', null, 'btn-success'); ?></div>
+    <div class="text-right"><?php echo tep_draw_button(IMAGE_BUTTON_CONTINUE, 'fa fa-angle-right', null, 'primary', null, 'btn-success'); ?></div>
   </div>
   
   <div class="clearfix"></div>

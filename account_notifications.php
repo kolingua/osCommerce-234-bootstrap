@@ -125,7 +125,7 @@
 ?>
       <div class="checkbox">
         <label>
-          <?php echo tep_draw_checkbox_field('products[' . $counter . ']', $products['products_id'], true) . $products['products_name']; ?>
+          <?php echo tep_draw_checkbox_field('products[]', $products['products_id'], true) . $products['products_name']; ?>
         </label>
       </div>
 <?php
@@ -155,8 +155,8 @@
 ?>
 
   <div class="buttonSet row">
-    <div class="col-xs-6"><?php echo tep_draw_button(IMAGE_BUTTON_BACK, 'glyphicon glyphicon-chevron-left', tep_href_link(FILENAME_ACCOUNT, '', 'SSL')); ?></div>
-    <div class="col-xs-6 text-right"><?php echo tep_draw_button(IMAGE_BUTTON_CONTINUE, 'glyphicon glyphicon-chevron-right', null, 'primary', null, 'btn-success'); ?></div>
+    <div class="col-xs-6"><?php echo tep_draw_button(IMAGE_BUTTON_BACK, 'fa fa-angle-left', tep_href_link(FILENAME_ACCOUNT, '', 'SSL')); ?></div>
+    <div class="col-xs-6 text-right"><?php echo tep_draw_button(IMAGE_BUTTON_CONTINUE, 'fa fa-angle-right', null, 'primary', null, 'btn-success'); ?></div>
   </div>
 </div>
 
